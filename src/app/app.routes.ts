@@ -13,6 +13,14 @@ export const routes: Routes = [
         path: 'work',
         loadComponent: () => import('./pages/work/work.component'),
       },
+      {
+        path: 'contact',
+        loadComponent: () => import('./pages/work/work.component'),
+      },
+      {
+        path: 'socials',
+        loadComponent: () => import('./pages/work/work.component'),
+      },
     ],
   },
   {
