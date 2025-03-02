@@ -1,0 +1,36 @@
+<div class="bg-primary h-full overflow-y-auto">
+  <div class="p-4">
+    <h1 class="text-bone text-3xl font-bold">Experience</h1>
+
+    <div class="py-4">
+      @for (work of works(); track $index) {
+        <div class="mb-4 flex items-start gap-2">
+          <div class="flex w-2/8 items-center">
+            <div class="text-bone text-4xl font-normal">0{{ $index + 1 }}</div>
+            <div class="bg-accent h-1 w-full"></div>
+          </div>
+
+          <div class="flex w-6/8 flex-col gap-2">
+            <h1 class="text-bone text-xl font-bold">
+              {{ work.company }}
+            </h1>
+            <h2 class="text-tertiary text-sm font-medium">
+              {{ work.position }}
+            </h2>
+            <h3 class="text-soft text-sm font-light">
+              {{ work.startDate.month | uppercase }} {{ work.startDate.year }} /
+              {{
+                work.endDate
+                  ? (work.endDate.month | uppercase) + " " + work.endDate.year
+                  : "PRESENTE"
+              }}
+            </h3>
+            <p class="text-gray font-medium whitespace-pre-line">
+              {{ work.description }}
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
