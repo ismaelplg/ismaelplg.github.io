@@ -1,0 +1,52 @@
+@if (sidepanelService.sidePanelOpenSignal()) {
+  <div
+    class="bg-primary absolute inset-0 z-20 h-full w-3/5"
+    [@slideInAnimation]
+  >
+    <div class="flex items-center justify-between p-4">
+      <a routerLink="/" class="">
+        <img class="h-10" src="/icons/MajesticonsPlanet.svg" alt="icon" />
+      </a>
+      <i class="fa-solid fa-xmark text-bone" (click)="toggleSidepanel()"></i>
+    </div>
+
+    <div
+      class="text-bone text-md flex flex-col gap-2 py-4 font-medium uppercase"
+    >
+      <a
+        routerLink=""
+        routerLinkActive="bg-accent border-r-4 border-red-accent"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="flex items-center gap-2 px-6 py-2"
+        (click)="toggleSidepanel()"
+      >
+        <i class="fa-solid fa-house text-lg"></i>
+        <h1>Home</h1>
+      </a>
+      <a
+        routerLink="/experience"
+        routerLinkActive="bg-accent border-r-4 border-red-accent"
+        class="flex items-center gap-2 px-6 py-2"
+        (click)="toggleSidepanel()"
+      >
+        <i class="fa-solid fa-suitcase"></i>
+        <h1>Experience</h1>
+      </a>
+      <a
+        routerLink="/education"
+        routerLinkActive="bg-accent border-r-4 border-red-accent"
+        class="flex items-center gap-2 px-6 py-2"
+        (click)="toggleSidepanel()"
+      >
+        <i class="fa-solid fa-certificate"></i>
+        <h1>Education</h1>
+      </a>
+    </div>
+  </div>
+
+  <div
+    [@fadeInOutAnimation]
+    class="absolute inset-0 z-10 bg-black/80"
+    (click)="toggleSidepanel()"
+  ></div>
+}
