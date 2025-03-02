@@ -1,0 +1,25 @@
+<nav
+  class="text-bone bg-primary border-tertiary/20 z-10 flex justify-between border-b-2 p-4"
+>
+  <a routerLink="/">
+    <img class="h-10" src="/icons/MajesticonsPlanet.svg" alt="icon" />
+  </a>
+  <div class="flex items-center gap-4">
+    @if (!sidepanelService.sidePanelOpenSignal()) {
+      <button
+        class="bg-secondary hover:bg-accent rounded-md px-4 py-2 transition-all duration-300"
+        [@fadeInOutAnimation]
+      >
+        <a
+          href="https://drive.google.com/file/d/1tGoojJ7A7UYahUwjD4suzmEkOR8Nh4TZ/view?usp=sharing"
+          target="_blank"
+        >
+          <div>Get my CV</div>
+        </a>
+      </button>
+      <button (click)="toggleSidepanel()" class="hidden">
+        <i class="fa-solid fa-bars" [@fadeInOutAnimation]></i>
+      </button>
+    }
+  </div>
+</nav>

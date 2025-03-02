@@ -1,5 +1,16 @@
-<!-- <div class="h-dvh w-full bg-[url(/images/marita-kavelashvili-ugnrXk1129g-unsplash.jpg)] bg-cover bg-center"> -->
-<div class="h-dvh w-full bg-primary">
-  <shared-navbar />
-  <router-outlet />
+<div
+  class="z-0 bg-[url(/images/low-poly-grid-haikei.svg)] bg-cover bg-center 2xl:flex 2xl:h-screen 2xl:items-center 2xl:justify-center"
+>
+  <div
+    class="absolute z-10 hidden h-screen w-full 2xl:block 2xl:bg-black/30"
+  ></div>
+  <div
+    class="z-30 flex h-dvh w-full flex-col overflow-hidden shadow-2xl 2xl:h-[900px] 2xl:w-[1500px] 2xl:rounded-xl"
+  >
+    <shared-navbar />
+    <shared-sidepanel />
+    <div class="flex-1 overflow-y-auto">
+      <router-outlet />
+    </div>
+  </div>
 </div>

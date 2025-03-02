@@ -1,28 +1,30 @@
-<!-- <div class="flex justify-between backdrop-blur-3xl bg-stone-950/50 ">
-  <div class=" text-[#cccccc] py-4 px-12 flex flex-col justify-center">
-    <h1 class="text-5xl font-bold">Ismael López</h1>
-    <h3 class="text-2xl font-extralight font-roboto">Frontend Developer</h3>
-  </div>
-  <img src="/images/procreator-global-ui-ux-design-agency-VzJjPuk53sk-unsplash.jpg" class="w-2/5" />
-</div> -->
-
 <div
-  class="border border-red-500 flex flex-col items-center justify-center h-full p-4"
+  class="bg-primary z-0 flex h-full flex-col items-center justify-center overflow-y-visible p-8 landscape:py-40 md:landscape:flex-row md:landscape:gap-4"
 >
-  <img
-    class="grayscale size-70 object-cover rounded-full"
-    src="/images/IMG_2675_enhanced.jpg"
-    alt="myself"
-  />
+  <div>
+    @defer (on viewport) {
+      <img
+        class="size-70 rounded-full object-cover"
+        src="/images/IMG_2675_enhanced.jpg"
+        alt="myself"
+      />
+    } @placeholder {
+      <div class="bg-accent size-70 animate-pulse rounded-full"></div>
+    }
+  </div>
 
-  <h2 class="uppercase text-tertiary font-medium text-lg mt-4">ismael lopez</h2>
-  <h1 class="font-normal text-bone text-5xl text-center mt-4">
-    Frontend Developer
-  </h1>
-  <h3 class="text-center text-tertiary text-xl font-extralight mt-2">
-    Passionate about <span class="font-bold">tech</span> , having
-    <span class="font-bold">fun</span> and
-    <span class="font-bold">learning</span>
-    new things
-  </h3>
+  <div class="flex flex-col items-center md:landscape:items-start">
+    <h2 class="text-tertiary mt-4 text-lg font-medium uppercase">
+      ismael lopez
+    </h2>
+    <h1 class="text-bone mt-4 text-center text-5xl font-normal">
+      Frontend Developer
+    </h1>
+    <h3 class="text-tertiary mt-2 text-center text-xl font-extralight">
+      Passionate about <span class="font-bold">tech</span> , having
+      <span class="font-bold">fun</span> and
+      <span class="font-bold">learning</span>
+      new things
+    </h3>
+  </div>
 </div>
