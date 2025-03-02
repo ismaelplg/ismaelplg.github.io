@@ -7,19 +7,23 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        title: 'Home',
         loadComponent: () => import('./pages/home/home.component'),
       },
       {
-        path: 'work',
-        loadComponent: () => import('./pages/work/work.component'),
+        path: 'experience',
+        title: 'Experience',
+        loadComponent: () => import('./pages/experience/experience.component'),
       },
       {
         path: 'contact',
-        loadComponent: () => import('./pages/work/work.component'),
+        title: 'Contact',
+        loadComponent: () => import('./pages/experience/experience.component'),
       },
       {
         path: 'socials',
-        loadComponent: () => import('./pages/work/work.component'),
+        title: 'Socials',
+        loadComponent: () => import('./pages/experience/experience.component'),
       },
     ],
   },
