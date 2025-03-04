@@ -1,0 +1,41 @@
+<div class="bg-primary h-full overflow-y-auto p-4">
+  <div class="lg:flex lg:gap-8 xl:justify-center">
+    <h1 class="text-bone mb-4 text-3xl font-bold">Experience</h1>
+
+    <div class="flex flex-col gap-4">
+      @for (work of works(); track $index) {
+        <div
+          class="border-secondary flex max-w-[900px] flex-col rounded-md border p-4 shadow-2xl"
+        >
+          <div
+            class="text-bone border-tertiary bg-tertiary/5 flex items-center border-l-2 px-2"
+          >
+            <h2 class="text-tertiary text-sm font-medium capitalize italic">
+              {{ work.startDate.month }} {{ work.startDate.year }} -
+              {{
+                work.endDate
+                  ? work.endDate.month + " " + work.endDate.year
+                  : "present"
+              }}
+            </h2>
+          </div>
+
+          <h1 class="text-bone mt-2 text-lg font-bold">
+            {{ work.company }}
+          </h1>
+          <h3>
+            <span class="text-tertiary text-sm font-medium">
+              {{ work.position }}
+            </span>
+          </h3>
+
+          <span
+            class="text-gray mt-2 font-medium text-wrap whitespace-pre-line"
+          >
+            {{ work.description }}
+          </span>
+        </div>
+      }
+    </div>
+  </div>
+</div>
