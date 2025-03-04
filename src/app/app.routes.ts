@@ -8,22 +8,31 @@ export const routes: Routes = [
       {
         path: '',
 
-        loadComponent: () => import('./pages/home/home.component'),
+        loadComponent: () => import('./features/home/home.component'),
       },
       {
         path: 'experience',
 
-        loadComponent: () => import('./pages/experience/experience.component'),
+        loadComponent: () =>
+          import('./features/experience/experience.component'),
+      },
+      {
+        path: 'certifications',
+
+        loadComponent: () =>
+          import('./features/certifications/certifications.component'),
       },
       {
         path: 'contact',
 
-        loadComponent: () => import('./pages/experience/experience.component'),
+        loadComponent: () =>
+          import('./features/experience/experience.component'),
       },
       {
         path: 'socials',
 
-        loadComponent: () => import('./pages/experience/experience.component'),
+        loadComponent: () =>
+          import('./features/experience/experience.component'),
       },
     ],
   },
