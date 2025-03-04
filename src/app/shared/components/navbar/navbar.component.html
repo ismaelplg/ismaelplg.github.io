@@ -1,9 +1,36 @@
 <nav
-  class="text-bone bg-primary border-tertiary/20 z-10 flex justify-between border-b-2 p-4"
+  class="text-bone bg-primary border-tertiary/20 z-10 flex justify-between border-b-2 px-4 py-4"
 >
   <a routerLink="/">
     <img class="h-10" src="/icons/MajesticonsPlanet.svg" alt="icon" />
   </a>
+  <div
+    class="text-bone text-md hidden items-center gap-2 font-medium uppercase lg:flex"
+  >
+    <a
+      routerLink=""
+      routerLinkActive="bg-accent rounded-md"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="flex items-center gap-2 px-6 py-2"
+    >
+      <h1>Home</h1>
+    </a>
+    <a
+      routerLink="/experience"
+      routerLinkActive="bg-accent rounded-md"
+      class="flex items-center gap-2 px-6 py-2"
+    >
+      <h1>Experience</h1>
+    </a>
+    <a
+      routerLink="/education"
+      routerLinkActive="bg-accent rounded-md"
+      class="flex items-center gap-2 px-6 py-2"
+    >
+      <h1>Education</h1>
+    </a>
+  </div>
+
   <div class="flex items-center gap-4">
     @if (!sidepanelService.sidePanelOpenSignal()) {
       <button
@@ -17,7 +44,7 @@
           <div>Get my CV</div>
         </a>
       </button>
-      <button (click)="toggleSidepanel()" class="hidden">
+      <button (click)="toggleSidepanel()" class="lg:hidden">
         <i class="fa-solid fa-bars" [@fadeInOutAnimation]></i>
       </button>
     }

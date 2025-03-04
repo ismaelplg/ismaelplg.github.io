@@ -8,7 +8,7 @@ import {
 
 @Component({
   selector: 'shared-navbar',
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   animations: [slideInAnimation, fadeInOutAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush,
