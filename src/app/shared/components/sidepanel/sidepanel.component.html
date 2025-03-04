@@ -4,7 +4,7 @@
     [@slideInAnimation]
   >
     <div class="flex items-center justify-between p-4">
-      <a routerLink="/" class="">
+      <a routerLink="/" (click)="toggleSidepanel()">
         <img class="h-10" src="/icons/MajesticonsPlanet.svg" alt="icon" />
       </a>
       <i class="fa-solid fa-xmark text-bone" (click)="toggleSidepanel()"></i>
@@ -33,14 +33,23 @@
         <h1>Experience</h1>
       </a>
       <a
-        routerLink="/education"
+        routerLink="/certifications"
         routerLinkActive="bg-accent border-r-4 border-red-accent"
         class="flex items-center gap-2 px-6 py-2"
         (click)="toggleSidepanel()"
       >
         <i class="fa-solid fa-certificate"></i>
-        <h1>Education</h1>
+        <h1>Certifications</h1>
       </a>
+      <!-- <a
+        routerLink="/portfolio"
+        routerLinkActive="bg-accent border-r-4 border-red-accent"
+        class="flex items-center gap-2 px-6 py-2"
+        (click)="toggleSidepanel()"
+      >
+        <i class="fa-solid fa-file"></i>
+        <h1>Portfolio <span class="text-[8px]"> (Coming soon...)</span></h1>
+      </a> -->
     </div>
   </div>
 
