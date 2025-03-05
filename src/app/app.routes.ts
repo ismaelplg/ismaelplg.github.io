@@ -34,6 +34,10 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/experience/experience.component'),
       },
+      {
+        path: '**',
+        redirectTo: '',
+      },
     ],
   },
   {
