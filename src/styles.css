@@ -18,3 +18,7 @@
 * {
   font-family: var(--font-roboto);
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
