@@ -7,7 +7,6 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-
         loadComponent: () => import('./features/home/home.component'),
       },
       {
