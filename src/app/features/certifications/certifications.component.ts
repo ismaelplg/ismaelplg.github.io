@@ -36,14 +36,14 @@ export default class CertificationsComponent {
       teacher: 'Fernando',
       course: 'Angular de cero a experto',
       techIcon: ['/icons/angular.svg', '/icons/udemy_dark.svg'],
-      year: 2022,
+      year: 2023,
     },
     {
       company: 'Udemy',
       teacher: 'Fernando Herrera',
       course: 'TypeScript: Tu completa guía y manual de mano.',
       techIcon: ['/icons/typescript.svg', '/icons/udemy_dark.svg'],
-      year: 2022,
+      year: 2023,
     },
     {
       company: 'Udemy',
