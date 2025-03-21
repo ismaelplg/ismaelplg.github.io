@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+} from '@angular/core';
 import { UpperCasePipe } from '@angular/common';
 import { Certification } from '../../shared/interfaces/certification.interface';
 
@@ -9,6 +14,10 @@ import { Certification } from '../../shared/interfaces/certification.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class CertificationsComponent {
+  sortedCertifications = computed(() => {
+    return [...this.certifications()].reverse();
+  });
+
   certifications = signal<Certification[]>([
     {
       company: 'Udemy',

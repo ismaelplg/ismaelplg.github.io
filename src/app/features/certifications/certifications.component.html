@@ -3,7 +3,7 @@
     <h1 class="text-bone mb-4 text-3xl font-bold">Certifications</h1>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-      @for (certification of certifications(); track $index) {
+      @for (certification of sortedCertifications(); track $index) {
         <div class="border-secondary rounded-md border p-4 shadow-2xl">
           <div class="flex items-end justify-between">
             <h1 class="text-bone text-xl font-bold capitalize">
