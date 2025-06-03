@@ -1,31 +1,75 @@
 <div class="bg-primary h-full overflow-y-auto p-4 md:p-8 xl:px-32 xl:pt-6">
   <div class="lg:flex lg:gap-8 xl:justify-center">
     <h1 class="text-bone mb-4 text-3xl font-bold">Certifications</h1>
+    <div>
+      <!--  class="text-bone grid grid-cols-2 gap-1 p-4 text-xs md:flex md:justify-center" -->
+      <div
+        class="text-bone grid grid-cols-2 gap-1 p-4 text-xs md:flex md:justify-center"
+      >
+        <button
+          class="hover:bg-accent border-bone/10 rounded-md border-2 px-4 py-2 transition-all duration-300"
+          [ngClass]="{
+            'bg-accent border-bone/100 text-white': selectedFilter() === 'all',
+          }"
+          (click)="selectedFilter.set('all')"
+        >
+          All
+        </button>
+        <button
+          class="hover:bg-accent border-bone/10 rounded-md border-2 px-4 py-2 transition-all duration-300"
+          [ngClass]="{
+            'bg-accent text-white': selectedFilter() === 'completed',
+          }"
+          (click)="selectedFilter.set('completed')"
+        >
+          Completed
+        </button>
+        <button
+          class="hover:bg-accent border-bone/10 rounded-md border-2 px-4 py-2 transition-all duration-300"
+          [ngClass]="{
+            'bg-accent text-white': selectedFilter() === 'in-progress',
+          }"
+          (click)="selectedFilter.set('in-progress')"
+        >
+          In Progress
+        </button>
+        <button
+          class="hover:bg-accent border-bone/10 rounded-md border-2 px-4 py-2 transition-all duration-300"
+          [ngClass]="{
+            'bg-accent text-white': selectedFilter() === 'reviewing',
+          }"
+          (click)="selectedFilter.set('reviewing')"
+        >
+          Reviewing
+        </button>
+      </div>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+        @for (certification of filteredCertification(); track $index) {
+          <div
+            class="border-secondary flex h-full flex-col justify-between rounded-md border p-4 shadow-2xl"
+          >
+            <div class="flex items-end justify-between">
+              <h1 class="text-bone text-xl font-bold capitalize">
+                {{ certification.course }}
+              </h1>
+            </div>
 
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-      @for (certification of sortedCertifications(); track $index) {
-        <div class="border-secondary rounded-md border p-4 shadow-2xl">
-          <div class="flex items-end justify-between">
-            <h1 class="text-bone text-xl font-bold capitalize">
-              {{ certification.course }}
-            </h1>
-          </div>
-
-          <h3 class="text-tertiary text-sm font-medium">
-            {{ certification.teacher }}
-          </h3>
-          <h3 class="text-gray font-medium">
-            {{ certification.year }}
-          </h3>
-          <div class="flex items-center justify-end gap-4 py-2">
-            @if (certification.techIcon) {
-              @for (techIcon of certification.techIcon; track $index) {
-                <img class="h-6" src="{{ techIcon }}" alt="icon" />
+            <h3 class="text-tertiary text-sm font-medium">
+              {{ certification.teacher }}
+            </h3>
+            <h3 class="text-gray font-medium">
+              {{ certification.year }}
+            </h3>
+            <div class="flex items-center justify-end gap-4 py-2">
+              @if (certification.techIcon) {
+                @for (techIcon of certification.techIcon; track $index) {
+                  <img class="h-6" src="{{ techIcon }}" alt="icon" />
+                }
               }
-            }
+            </div>
           </div>
-        </div>
-      }
+        }
+      </div>
     </div>
   </div>
 </div>
