@@ -16,43 +16,18 @@
       class="text-bone text-md flex h-full flex-col justify-between gap-2 py-4 font-medium uppercase"
     >
       <div>
-        <a
-          routerLink=""
-          routerLinkActive="bg-accent border-r-4 border-red-accent"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="flex items-center gap-2 px-6 py-2"
-          (click)="toggleSidepanel()"
-        >
-          <i class="fa-solid fa-house text-lg"></i>
-          <h1>Home</h1>
-        </a>
-        <a
-          routerLink="/experience"
-          routerLinkActive="bg-accent border-r-4 border-red-accent"
-          class="flex items-center gap-2 px-6 py-2"
-          (click)="toggleSidepanel()"
-        >
-          <i class="fa-solid fa-suitcase"></i>
-          <h1>Experience</h1>
-        </a>
-        <a
-          routerLink="/certifications"
-          routerLinkActive="bg-accent border-r-4 border-red-accent"
-          class="flex items-center gap-2 px-6 py-2"
-          (click)="toggleSidepanel()"
-        >
-          <i class="fa-solid fa-certificate"></i>
-          <h1>Certifications</h1>
-        </a>
-        <!-- <a
-        routerLink="/portfolio"
-        routerLinkActive="bg-accent border-r-4 border-red-accent"
-        class="flex items-center gap-2 px-6 py-2"
-        (click)="toggleSidepanel()"
-      >
-        <i class="fa-solid fa-file"></i>
-        <h1>Portfolio <span class="text-[8px]"> (Coming soon...)</span></h1>
-      </a> -->
+        @for (item of menuItems; track $index; let i = $index) {
+          <a
+            [routerLink]="item.path"
+            routerLinkActive="bg-accent border-r-4 border-red-accent"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="flex items-center gap-2 px-6 py-2"
+            (click)="toggleSidepanel()"
+          >
+            <i [ngClass]="item.data?.['icon']" class="fa-solid text-lg"></i>
+            <h1>{{ item.title }}</h1>
+          </a>
+        }
       </div>
 
       <div class="text-accent flex items-center justify-end gap-2 px-6">

@@ -11,38 +11,42 @@ export const routes: Routes = [
       },
       {
         path: 'experience',
-
+        title: 'Experience',
+        data: {
+          icon: 'fa-house',
+        },
         loadComponent: () =>
           import('./features/experience/experience.component'),
       },
       {
         path: 'certifications',
-
+        title: 'Certifications',
+        data: {
+          icon: 'fa-suitcase',
+        },
         loadComponent: () =>
           import('./features/certifications/certifications.component'),
       },
       {
         path: 'contact',
-
+        title: 'Contact',
+        data: {
+          icon: 'fa-certificate',
+        },
         loadComponent: () =>
           import('./features/experience/experience.component'),
       },
-      {
-        path: 'socials',
-
-        loadComponent: () =>
-          import('./features/experience/experience.component'),
-      },
+      // {
+      //   path: 'socials',
+      //   title: 'Socials',
+      //   loadComponent: () =>
+      //     import('./features/experience/experience.component'),
+      // },
       {
         path: '**',
         redirectTo: '',
         pathMatch: 'full',
       },
     ],
-  },
-  {
-    path: '**',
-    redirectTo: '',
-    pathMatch: 'full',
   },
 ];
