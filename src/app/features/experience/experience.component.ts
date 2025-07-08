@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { Work } from '../../shared/interfaces/work.interface';
+import { ContainerComponent } from '../../shared/components/container/container.component';
 
 @Component({
   selector: 'app-work',
-  imports: [],
+  imports: [ContainerComponent],
   templateUrl: './experience.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

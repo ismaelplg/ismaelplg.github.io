@@ -7,10 +7,11 @@ import {
 
 import { Certification } from '../../shared/interfaces/certification.interface';
 import { CommonModule } from '@angular/common';
+import { ContainerComponent } from '../../shared/components/container/container.component';
 
 @Component({
   selector: 'app-certifications',
-  imports: [CommonModule],
+  imports: [CommonModule, ContainerComponent],
   templateUrl: './certifications.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -21,6 +22,11 @@ export default class CertificationsComponent {
 
   filteredCertification = computed(() => {
     if (this.selectedFilter() === 'all') return this.certifications();
+    if (this.selectedFilter() === 'completed') {
+      return this.certifications().filter(
+        (s) => s.status === 'completed' || s.status === 'reviewing',
+      );
+    }
     return this.certifications().filter(
       (s) => s.status === this.selectedFilter(),
     );

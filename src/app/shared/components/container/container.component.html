@@ -1,0 +1,17 @@
+<!-- <div class="bg-primary flex h-full w-full">
+  <div class="flex w-1/4 justify-end border border-green-500 p-4">
+    <h1 class="text-bone mb-4 text-3xl font-bold">{{ title() }}</h1>
+  </div>
+  <div class="w-3/4 border border-red-500">
+    <ng-content></ng-content>
+  </div>
+</div> -->
+
+<div class="bg-primary flex h-full w-full flex-col lg:flex-row">
+  <div class="p-2 lg:flex lg:w-1/4 lg:justify-end lg:p-4">
+    <h1 class="text-bone text-3xl font-bold">{{ title() }}</h1>
+  </div>
+  <div class="p-2 lg:w-3/4 lg:p-4">
+    <ng-content></ng-content>
+  </div>
+</div>

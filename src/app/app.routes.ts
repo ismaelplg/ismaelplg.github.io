@@ -7,13 +7,17 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        title: 'Home',
+        data: {
+          icon: 'fa-house',
+        },
         loadComponent: () => import('./features/home/home.component'),
       },
       {
         path: 'experience',
         title: 'Experience',
         data: {
-          icon: 'fa-house',
+          icon: 'fa-suitcase',
         },
         loadComponent: () =>
           import('./features/experience/experience.component'),
@@ -22,20 +26,20 @@ export const routes: Routes = [
         path: 'certifications',
         title: 'Certifications',
         data: {
-          icon: 'fa-suitcase',
+          icon: 'fa-certificate',
         },
         loadComponent: () =>
           import('./features/certifications/certifications.component'),
       },
-      {
-        path: 'contact',
-        title: 'Contact',
-        data: {
-          icon: 'fa-certificate',
-        },
-        loadComponent: () =>
-          import('./features/experience/experience.component'),
-      },
+      // {
+      //   path: 'contact',
+      //   title: 'Contact',
+      //   data: {
+      //     icon: 'fa-certificate',
+      //   },
+      //   loadComponent: () =>
+      //     import('./features/experience/experience.component'),
+      // },
       // {
       //   path: 'socials',
       //   title: 'Socials',

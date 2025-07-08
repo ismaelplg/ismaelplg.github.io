@@ -6,5 +6,12 @@
     "plaintext": "html",
     "typescript": "javascript",
     "html": "html"
+  },
+  "angular-schematics.schematicsDefaultOptions": {
+    "angular-*": {
+      "externalTemplate": true,
+      "inlineStyle": true,
+      "skipStyle": true
+    }
   }
 }
