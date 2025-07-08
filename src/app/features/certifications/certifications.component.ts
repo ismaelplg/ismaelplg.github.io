@@ -99,7 +99,7 @@ export default class CertificationsComponent {
       course: 'NodeJs: De cero a experto',
       status: 'in-progress',
       techIcon: ['/icons/nodejs.svg', '/icons/udemy_dark.svg'],
-      year: 2024,
+      year: 2025,
     },
   ]);
 }
