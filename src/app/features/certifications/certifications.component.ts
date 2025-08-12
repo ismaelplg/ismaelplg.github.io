@@ -101,5 +101,13 @@ export default class CertificationsComponent {
       techIcon: ['/icons/nodejs.svg', '/icons/udemy_dark.svg'],
       year: 2025,
     },
+    {
+      company: 'Udemy',
+      teacher: 'Fernando Herrera',
+      course: 'SQL de cero: Tu guía práctica con PostgreSQL',
+      status: 'in-progress',
+      techIcon: ['/icons/postgresql.svg', '/icons/udemy_dark.svg'],
+      year: 2025,
+    },
   ]);
 }
