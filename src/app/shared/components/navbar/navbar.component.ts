@@ -1,22 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { SidepanelService } from '../../services/sidepanel.service';
-import {
-  fadeInOutAnimation,
-  slideInAnimation,
-} from '../../animations/animations';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'shared-navbar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [],
   templateUrl: './navbar.component.html',
-  animations: [slideInAnimation, fadeInOutAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent {
-  readonly sidepanelService = inject(SidepanelService);
-
-  toggleSidepanel() {
-    this.sidepanelService.toggleSidePanel();
-  }
-}
+export class NavbarComponent {}
