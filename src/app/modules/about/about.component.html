@@ -2,7 +2,7 @@
   <!-- DIVIDER -->
   <div class="flex flex-col w-fit">
     <div class="h-px bg-text-secondary"></div>
-    <h1 class="text-text-primary text-sm mt-1">ABOUT ME</h1>
+    <h1 class="text-secondary text-sm mt-1">ABOUT ME</h1>
   </div>
   <!-- TEXT -->
   <div class="flex items-center gap-4 pt-5 pb-4">
@@ -41,7 +41,9 @@
 
     <div class="flex items-center gap-2 mt-3">
       @for (item of currentWork()[0].technologies; track $index) {
-        <div class="text-xs text-background bg-text-primary px-[10px] py-[5px] rounded-3xl">
+        <div
+          class="text-xs text-text-primary bg-terciary px-[10px] py-[5px] rounded-3xl font-normal"
+        >
           {{ item }}
         </div>
       }

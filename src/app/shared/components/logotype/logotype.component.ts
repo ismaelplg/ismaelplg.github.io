@@ -1,15 +1,15 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { SidepanelService } from '../../services/sidepanel.service';
 import { routes } from '../../../app.routes';
 
 @Component({
   selector: 'shared-logotype',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './logotype.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LogotypeComponent {
+export class LogotypeComponent implements OnInit {
   colors = signal<string[]>([
     '#42BD78', // Verde profesional → fresco, moderno y confiable
     '#444444', // Gris oscuro → elegante, sobrio y minimalista
@@ -23,27 +23,16 @@ export class LogotypeComponent {
     '#C62828', // Rojo vino oscuro → elegante, fuerte y con carácter
   ]);
 
+  currentColor = signal<string>(this.colors()[0]);
+
   getRandomColor = (colors: string[]) => {
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
   };
 
-  sidepanelService = inject(SidepanelService);
-
-  route = routes.map((r) => r.children).flat();
-
-  offset = 70; // scroll offset
-
-  constructor(private router: Router) {}
-
-  scrollTo(routePath: string, fragment: string) {
-    if (!fragment) return; // evita scroll si no hay fragment
-    this.router.navigate([routePath]).then(() => {
-      const el = document.getElementById(fragment);
-      if (el) {
-        const y = el.getBoundingClientRect().top + window.scrollY - this.offset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    });
+  ngOnInit(): void {
+    setInterval(() => {
+      this.currentColor.set(this.getRandomColor(this.colors()));
+    }, 5000);
   }
 }

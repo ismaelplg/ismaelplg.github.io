@@ -7,12 +7,21 @@
   --font-roboto: 'Roboto', sans-serif;
   --font-nunito: 'Nunito', sans-serif;
 
-  --color-background: #09090b;
-  --color-secondary: #f1f1f1;
-  --color-text-primary: #eaeaea;
-  --color-text-secondary: #b9b9b9;
+  --color-background: #ffffff;
+  --color-secondary: #9d9d9d;
+  --color-terciary: #dbdbdb;
+  --color-text-primary: #0a0a0a;
+  --color-text-secondary: #545454;
 }
 
 * {
   scroll-behavior: smooth;
+}
+
+:root {
+  --navbar-height: 80px;
+}
+
+section {
+  scroll-margin-top: var(--navbar-height);
 }
