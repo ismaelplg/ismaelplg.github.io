@@ -1,2 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import 'tailwindcss';
+
+@theme {
+  --font-roboto: 'Roboto', sans-serif;
+  --font-nunito: 'Nunito', sans-serif;
+
+  --color-background: #09090b;
+  --color-text-primary: #eaeaea;
+  --color-text-secondary: #bebebe;
+}

@@ -1,0 +1,20 @@
+<!-- SIDEPANEL -->
+@if (sidepanelService.isToggled()) {
+  <div
+    class="bg-background lg:hidden py-6 border-b border-[#3f3f45]"
+    [animate.enter]="'animate-slide-in'"
+    [animate.leave]="'animate-slide-out'"
+  >
+    <ul class="text-text-primary flex flex-col gap-2 px-6">
+      <li>Inicio</li>
+      <li>Inicio</li>
+      <li>Inicio</li>
+      <li>Inicio</li>
+    </ul>
+    <div
+      class="mx-6 mt-4 border border-[#3f3f45] rounded text-text-primary flex items-center justify-center"
+    >
+      <h1 class="py-1">Hablemos</h1>
+    </div>
+  </div>
+}
