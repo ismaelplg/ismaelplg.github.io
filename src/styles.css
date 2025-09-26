@@ -8,6 +8,11 @@
   --font-nunito: 'Nunito', sans-serif;
 
   --color-background: #09090b;
+  --color-secondary: #f1f1f1;
   --color-text-primary: #eaeaea;
-  --color-text-secondary: #bebebe;
+  --color-text-secondary: #b9b9b9;
+}
+
+* {
+  scroll-behavior: smooth;
 }
