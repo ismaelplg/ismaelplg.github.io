@@ -1,4 +1,4 @@
-<div class="flex gap-1">
+<div class="flex gap-1" (click)="route.data!['id'] && scrollTo(route!.path!, route!.data!['id'])">
   <div>
     <div
       [style.backgroundColor]="getRandomColor(this.colors())"

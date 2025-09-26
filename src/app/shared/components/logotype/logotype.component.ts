@@ -1,8 +1,11 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { SidepanelService } from '../../services/sidepanel.service';
+import { routes } from '../../../app.routes';
 
 @Component({
   selector: 'shared-logotype',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './logotype.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -24,4 +27,23 @@ export class LogotypeComponent {
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
   };
+
+  sidepanelService = inject(SidepanelService);
+
+  route = routes.map((r) => r.children).flat();
+
+  offset = 70; // scroll offset
+
+  constructor(private router: Router) {}
+
+  scrollTo(routePath: string, fragment: string) {
+    if (!fragment) return; // evita scroll si no hay fragment
+    this.router.navigate([routePath]).then(() => {
+      const el = document.getElementById(fragment);
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - this.offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  }
 }
