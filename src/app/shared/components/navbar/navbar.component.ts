@@ -3,6 +3,7 @@ import { LogotypeComponent } from '../logotype/logotype.component';
 import { SidepanelComponent } from '../sidepanel/sidepanel.component';
 import { SidepanelService } from '../../services/sidepanel.service';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'shared-navbar',
@@ -12,4 +13,5 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   sidepanelService = inject(SidepanelService);
+  themeService = inject(ThemeService);
 }

@@ -1,27 +1,27 @@
 <!-- SIDEPANEL -->
 @if (sidepanelService.isToggled()) {
   <div
-    class="bg-background lg:hidden py-6 border-b border-[#3f3f45]"
+    class="bg-background lg:hidden py-6 border-b border-border"
     [animate.enter]="'animate-slide-in'"
     [animate.leave]="'animate-slide-out'"
   >
     <div class="flex flex-col gap-3 px-6" (click)="sidepanelService.toggleSidepanel()">
       <a href="#home">
-        <span class="text-text-secondary text-sm">Home</span>
+        <span class="text-secondary text-sm">Home</span>
       </a>
 
       <a href="#about">
-        <span class="text-text-secondary text-sm">About Me</span>
+        <span class="text-secondary text-sm">About Me</span>
       </a>
 
       <a href="#projects">
-        <span class="text-text-secondary text-sm">Projects</span>
+        <span class="text-secondary text-sm">Projects</span>
       </a>
     </div>
     <div
-      class="mx-6 mt-4 border border-[#3f3f45] rounded text-text-primary flex items-center justify-center"
+      class="mx-6 mt-4 border border-border rounded text-text-primary flex items-center justify-center"
     >
-      <h1 class="py-1">Hablemos</h1>
+      <h1 class="py-1 text-primary font-medium">Hablemos</h1>
     </div>
   </div>
 }

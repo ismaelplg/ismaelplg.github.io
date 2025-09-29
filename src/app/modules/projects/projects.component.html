@@ -1,7 +1,7 @@
 <div class="bg-background px-6 py-6">
   <!-- DIVIDER -->
   <div class="flex flex-col w-fit">
-    <div class="h-px bg-text-secondary"></div>
+    <div class="h-px bg-secondary"></div>
     <h1 class="text-secondary text-sm mt-1">PROJECTS</h1>
   </div>
   <!-- PROJECTS -->
@@ -9,19 +9,19 @@
     <div>
       @for (project of proyects(); track $index) {
         <div
-          class="border border-text-secondary/10 rounded-md p-4 flex flex-col hover:border-text-secondary transition-all duration-500 ease-in-out"
+          class="border border-secondary/10 rounded-md p-4 flex flex-col hover:border-secondary transition-all duration-500 ease-in-out"
         >
           <div class="bg-white py-4">
             <img [src]="project.image" [alt]="project.type" />
           </div>
-          <div class="h-px bg-text-secondary/40 my-6"></div>
+          <div class="h-px bg-secondary/40 my-6"></div>
           <div>
-            <h1 class="text-text-primary font-bold text-[18px]">{{ project.type }}</h1>
-            <h2 class="text-text-secondary mt-2 text-xs">{{ project.description }}</h2>
+            <h1 class="text-primary font-bold text-[18px]">{{ project.type }}</h1>
+            <h2 class="text-secondary mt-2 text-xs">{{ project.description }}</h2>
             <div class="flex items-center gap-2 mt-3">
               @for (tech of project.technologies; track $index) {
                 <div
-                  class="text-xs text-text-primary bg-terciary px-[10px] py-[5px] rounded-3xl font-normal"
+                  class="text-xs text-primary bg-surface px-[10px] py-[5px] rounded-3xl font-normal"
                 >
                   {{ tech }}
                 </div>
@@ -29,7 +29,7 @@
             </div>
             <div class="mt-2 ml-1">
               <a [href]="project.link" target="_blank">
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-text-primary"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-primary"></i>
               </a>
             </div>
           </div>

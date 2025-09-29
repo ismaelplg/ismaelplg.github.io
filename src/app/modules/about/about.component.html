@@ -1,12 +1,12 @@
 <div class="bg-background px-6">
   <!-- DIVIDER -->
   <div class="flex flex-col w-fit">
-    <div class="h-px bg-text-secondary"></div>
+    <div class="h-px bg-secondary"></div>
     <h1 class="text-secondary text-sm mt-1">ABOUT ME</h1>
   </div>
   <!-- TEXT -->
   <div class="flex items-center gap-4 pt-5 pb-4">
-    <div class="text-text-secondary flex flex-col gap-2 text-sm">
+    <div class="text-secondary flex flex-col gap-2 text-sm">
       <span
         >Actualmente soy Senior Front-End Engineer en TuEmpresa, especializándome en accesibilidad.
         Contribuyo a la creación y mantenimiento de componentes UI que impulsan el frontend de
@@ -28,22 +28,20 @@
   </div>
   <!-- CURRENT WORK -->
   <div class="py-6">
-    <h2 class="text-xs text-text-secondary">
+    <h2 class="text-xs text-secondary">
       {{ currentWork()[0].startDate.month | uppercase }} {{ currentWork()[0].startDate.year }} —
       <span>PRESENT</span>
     </h2>
 
-    <h1 class="text-base text-text-primary font-bold mt-2">
+    <h1 class="text-base text-primary font-bold mt-2">
       {{ currentWork()[0].position }} / {{ currentWork()[0].company }}
     </h1>
 
-    <h3 class="text-xs text-text-secondary">{{ currentWork()[0].description }}</h3>
+    <h3 class="text-xs text-secondary">{{ currentWork()[0].description }}</h3>
 
     <div class="flex items-center gap-2 mt-3">
       @for (item of currentWork()[0].technologies; track $index) {
-        <div
-          class="text-xs text-text-primary bg-terciary px-[10px] py-[5px] rounded-3xl font-normal"
-        >
+        <div class="text-xs text-primary bg-surface px-[10px] py-[5px] rounded-3xl font-normal">
           {{ item }}
         </div>
       }
