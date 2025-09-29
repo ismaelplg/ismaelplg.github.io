@@ -1,50 +1,72 @@
-<div class="bg-background px-6">
-  <!-- DIVIDER -->
-  <div class="flex flex-col w-fit">
-    <div class="h-px bg-secondary"></div>
-    <h1 class="text-secondary text-sm mt-1">ABOUT ME</h1>
-  </div>
-  <!-- TEXT -->
-  <div class="flex items-center gap-4 pt-5 pb-4">
-    <div class="text-secondary flex flex-col gap-2 text-sm">
-      <span
-        >Actualmente soy Senior Front-End Engineer en TuEmpresa, especializándome en accesibilidad.
-        Contribuyo a la creación y mantenimiento de componentes UI que impulsan el frontend de
-        nuestra plataforma, asegurando que cumplan con los estándares de accesibilidad web y mejores
-        prácticas.</span
-      >
-
-      <span
-        >En el pasado, he tenido la oportunidad de desarrollar software en una variedad de entornos
-        — desde agencias de publicidad y grandes corporaciones hasta start-ups y estudios digitales
-        pequeños. Adicionalmente, también lancé un curso completo de video hace unos años, guiando a
-        estudiantes a través de la construcción de una aplicación web con React y Node.js.</span
-      >
-      <span>
-        En mi tiempo libre, usualmente estoy escalando, leyendo, pasando tiempo con mi familia, o
-        corriendo por la ciudad buscando el mejor café.
-      </span>
+<div class="bg-background px-6 xl:px-[550px]">
+    <!-- DIVIDER -->
+    <div class="flex w-fit flex-col">
+        <div class="bg-primary h-px"></div>
+        <h1 class="text-secondary mt-1 text-sm">ABOUT ME</h1>
     </div>
-  </div>
-  <!-- CURRENT WORK -->
-  <div class="py-6">
-    <h2 class="text-xs text-secondary">
-      {{ currentWork()[0].startDate.month | uppercase }} {{ currentWork()[0].startDate.year }} —
-      <span>PRESENT</span>
-    </h2>
+    <!-- TEXT -->
+    <div class="lg:flex lg:gap-10">
+        <div class="flex items-center gap-4 pt-5 pb-4 lg:w-[50%]">
+            <div class="text-secondary flex flex-col gap-2 text-sm">
+                <span
+                    >Actualmente soy Senior Front-End Engineer en TuEmpresa,
+                    especializándome en accesibilidad. Contribuyo a la creación
+                    y mantenimiento de componentes UI que impulsan el frontend
+                    de nuestra plataforma, asegurando que cumplan con los
+                    estándares de accesibilidad web y mejores prácticas.</span
+                >
 
-    <h1 class="text-base text-primary font-bold mt-2">
-      {{ currentWork()[0].position }} / {{ currentWork()[0].company }}
-    </h1>
-
-    <h3 class="text-xs text-secondary">{{ currentWork()[0].description }}</h3>
-
-    <div class="flex items-center gap-2 mt-3">
-      @for (item of currentWork()[0].technologies; track $index) {
-        <div class="text-xs text-primary bg-surface px-[10px] py-[5px] rounded-3xl font-normal">
-          {{ item }}
+                <span
+                    >En el pasado, he tenido la oportunidad de desarrollar
+                    software en una variedad de entornos — desde agencias de
+                    publicidad y grandes corporaciones hasta start-ups y
+                    estudios digitales pequeños. Adicionalmente, también lancé
+                    un curso completo de video hace unos años, guiando a
+                    estudiantes a través de la construcción de una aplicación
+                    web con React y Node.js.</span
+                >
+                <span>
+                    En mi tiempo libre, usualmente estoy escalando, leyendo,
+                    pasando tiempo con mi familia, o corriendo por la ciudad
+                    buscando el mejor café.
+                </span>
+            </div>
         </div>
-      }
+        <!-- CURRENT WORK -->
+        <div class="py-6 lg:w-[50%]">
+            <h2 class="text-secondary text-xs">
+                {{ currentWork()[0].startDate.month | uppercase }}
+                {{ currentWork()[0].startDate.year }} —
+                <span>PRESENT</span>
+            </h2>
+
+            <h1 class="text-primary mt-2 text-base font-bold">
+                {{ currentWork()[0].position }} / {{ currentWork()[0].company }}
+            </h1>
+
+            <div class="flex flex-col gap-2 pt-2">
+                @for (item of currentWork()[0].description; track $index) {
+                    <div class="flex items-baseline gap-2">
+                        <i
+                            class="fa-solid fa-circle text-secondary text-[5px]"
+                        ></i>
+
+                        <h3 class="text-secondary text-xs">
+                            {{ item.task }}
+                        </h3>
+                    </div>
+                }
+            </div>
+
+            <div class="mt-3 flex items-center gap-2">
+                @for (item of currentWork()[0].technologies; track $index) {
+                    <div
+                        class="text-primary bg-surface rounded-3xl px-[10px] py-[5px] text-xs font-normal"
+                    >
+                        {{ item }}
+                    </div>
+                }
+            </div>
+        </div>
     </div>
-  </div>
 </div>

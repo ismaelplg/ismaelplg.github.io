@@ -1,34 +1,57 @@
 <nav
-  class="bg-background px-5 py-2 flex items-center lg:flex lg:justify-center justify-between border-b border-border z-50"
+  class="bg-background border-border z-50 flex items-center justify-between border-b px-5 py-2 lg:flex xl:px-[550px]"
 >
-  <div class="flex items-center justify-between lg:w-[1080px]">
+  <div class="flex items-center justify-between">
     <shared-logotype />
   </div>
+  <!-- TABLET LINKS -->
+  <div class="hidden lg:block">
+    <div class="flex gap-10 px-6" (click)="sidepanelService.toggleSidepanel()">
+      <a href="#home">
+        <span class="text-secondary text-sm">Home</span>
+      </a>
+
+      <a href="#about">
+        <span class="text-secondary text-sm">About Me</span>
+      </a>
+
+      <a href="#projects">
+        <span class="text-secondary text-sm">Projects</span>
+      </a>
+    </div>
+  </div>
   <!-- HAMBURGER/CLOSE TOGGLE - CHANGE THEME -->
-  <div class="flex items-center gap-4 cursor-pointer">
-    <div class="flex items-center" (click)="themeService.toggleTheme()">
+  <div class="flex cursor-pointer items-center gap-4">
+    <div
+      class="flex items-center justify-center p-2"
+      (click)="themeService.toggleTheme()"
+    >
       <i
         [class]="
           themeService.isDark()
-            ? 'text-secondary text-lg fa-solid fa-sun'
-            : 'text-secondary text-lg fa-solid fa-moon'
+            ? 'text-secondary fa-solid fa-sun text-lg'
+            : 'text-secondary fa-solid fa-moon text-lg'
         "
-        class="text-secondary mt-[2px] transition-all duration-300 ease-in-out"
-        [style.transform]="themeService.isDark() ? 'rotate(90deg)' : 'rotate(0deg)'"
+        class="text-secondary transition-all duration-300 ease-in-out"
+        [style.transform]="
+          themeService.isDark() ? 'rotate(90deg)' : 'rotate(0deg)'
+        "
       ></i>
     </div>
     <div
-      class="md:hidden cursor-pointer flex gap-2 items-center justify-center w-[25px]"
+      class="flex w-[25px] cursor-pointer items-center justify-center gap-2 md:hidden"
       (click)="sidepanelService.toggleSidepanel()"
     >
       <i
         [class]="
           sidepanelService.isToggled()
-            ? 'text-secondary text-xl fa-solid fa-xmark'
-            : 'text-secondary text-xl fa-solid fa-bars'
+            ? 'text-secondary fa-solid fa-xmark text-xl'
+            : 'text-secondary fa-solid fa-bars text-xl'
         "
         class="transition-all duration-300 ease-in-out"
-        [style.transform]="sidepanelService.isToggled() ? 'rotate(90deg)' : 'rotate(0deg)'"
+        [style.transform]="
+          sidepanelService.isToggled() ? 'rotate(90deg)' : 'rotate(0deg)'
+        "
       ></i>
     </div>
   </div>

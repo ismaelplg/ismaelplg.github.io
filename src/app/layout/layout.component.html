@@ -1,22 +1,26 @@
-<div class="h-screen bg-background">
-  <div class="fixed top-0 w-full">
-    <shared-navbar />
-  </div>
-  <div class="h-screen pt-[64px]">
-    <section id="home">
-      <app-home class="scroll-m-[70px]" />
-    </section>
-    <section id="about">
-      <app-about />
-    </section>
-    <section id="projects">
-      <app-projects />
-    </section>
-    <div class="h-[170px] bg-background"></div>
-    <div class="h-[170px] bg-background"></div>
-    <div class="h-[170px] bg-background"></div>
-    <div class="h-[170px] bg-background"></div>
-    <div class="h-[170px] bg-background"></div>
-    <div class="h-[170px] bg-background"></div>
-  </div>
+<div class="bg-background h-screen">
+    <div class="fixed top-0 w-full">
+        <shared-navbar />
+    </div>
+
+    <div class="h-screen pt-[64px]">
+        <section id="home">
+            <app-home />
+        </section>
+        <div class="bg-background scroll-py-20 pt-20">
+            <section id="about">
+                <app-about />
+            </section>
+        </div>
+        <div class="bg-background scroll-py-20 pt-20">
+            <section id="projects">
+                <app-projects />
+            </section>
+        </div>
+        <div class="bg-background scroll-py-20 py-20">
+            <section id="projects">
+                <app-experience />
+            </section>
+        </div>
+    </div>
 </div>

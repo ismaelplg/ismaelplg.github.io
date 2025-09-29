@@ -17,17 +17,15 @@
     --color-border: #e9e8e8;
     --color-primary: #000000;
     --color-secondary: #848484;
-    --color-accent: #60a5fa;
   }
 }
 
 .dark {
-  --color-background: #0f0f0f;
+  --color-background: #151515;
   --color-surface: #2c2c2c;
   --color-border: #1c1c1c;
   --color-primary: #f1f1f1;
   --color-secondary: #848484;
-  --color-accent: #60a5fa;
 }
 
 * {

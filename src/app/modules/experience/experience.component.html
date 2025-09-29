@@ -1,0 +1,58 @@
+<div class="bg-background px-6 xl:px-[550px]">
+    <!-- DIVIDER -->
+    <div class="flex w-fit flex-col">
+        <div class="bg-primary h-px"></div>
+        <h1 class="text-secondary mt-1 text-sm">EXPERIENCE</h1>
+    </div>
+
+    <div class="py-5 lg:flex lg:gap-10">
+        <!-- CURRENT WORK -->
+
+        <div class="flex flex-col gap-16">
+            @for (work of experiences(); track $index) {
+                <div>
+                    <h2 class="text-secondary text-xs">
+                        <span>
+                            {{ work.startDate.month | uppercase }}
+                            {{ work.startDate.year }}
+                        </span>
+                        —
+                        <span>
+                            {{ work.endDate?.month | uppercase }}
+                            {{ work.endDate?.year ?? 'PRESENT' }}
+                        </span>
+                    </h2>
+
+                    <h1 class="text-primary mt-2 text-base font-medium">
+                        {{ work.position }} /
+                        {{ work.company }}
+                    </h1>
+
+                    <div class="flex flex-col gap-2 pt-2">
+                        @for (item of work.description; track $index) {
+                            <div class="flex items-baseline gap-2">
+                                <i
+                                    class="fa-solid fa-circle text-secondary text-[5px]"
+                                ></i>
+
+                                <h3 class="text-secondary text-xs">
+                                    {{ item.task }}
+                                </h3>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="mt-3 flex items-center gap-2">
+                        @for (item of work.technologies; track $index) {
+                            <div
+                                class="text-primary bg-surface rounded-3xl px-[10px] py-[5px] text-xs font-normal"
+                            >
+                                {{ item }}
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
