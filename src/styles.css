@@ -6,36 +6,36 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-roboto: 'Roboto', sans-serif;
-  --font-nunito: 'Nunito', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    --font-nunito: 'Nunito', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
-  @theme {
-    --color-background: #f8f8f8;
-    --color-surface: #dcdcdc;
-    --color-border: #e9e8e8;
-    --color-primary: #000000;
-    --color-secondary: #848484;
-  }
+    @theme {
+        --color-background: #f8f8f8;
+        --color-surface: #dcdcdc;
+        --color-border: #e9e8e8;
+        --color-primary: #000000;
+        --color-secondary: #848484;
+    }
 }
 
 .dark {
-  --color-background: #151515;
-  --color-surface: #2c2c2c;
-  --color-border: #1c1c1c;
-  --color-primary: #f1f1f1;
-  --color-secondary: #848484;
+    --color-background: #151515;
+    --color-surface: #2c2c2c;
+    --color-border: #252525;
+    --color-primary: #f1f1f1;
+    --color-secondary: #848484;
 }
 
 * {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 :root {
-  --navbar-height: 80px;
+    --navbar-height: 80px;
 }
 
 section {
-  scroll-margin-top: var(--navbar-height);
+    scroll-margin-top: var(--navbar-height);
 }
