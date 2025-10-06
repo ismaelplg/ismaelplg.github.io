@@ -18,9 +18,9 @@ export const projects: Proyects[] = [
         image: 'images/paco-duran/paco-duran-black-logo.png',
         imageAlt: 'images/paco-duran/paco-duran-white-logo.png',
         description:
-            'Personal information about Paco Duran a producer, mixer, composer, arranger, engineer and musician from Doulos',
+            'Personal information about Paco Duran a producer, mixer, composer, arranger, engineer and musician',
         status: 'completed',
-        link: 'https://paco-duran.vercel.app/',
+        link: 'https://pacoduranmix.com/',
         technologies: ['Angular'],
     },
     {

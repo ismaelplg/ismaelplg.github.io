@@ -30,12 +30,9 @@ export class ContactComponent {
     errorMessage = signal<string>('')
 
     contactForm: FormGroup = this.fb.group({
-        name: ['prueba', [Validators.required, Validators.minLength(5)]],
-        email: ['prueba@test.com', [Validators.required, Validators.email]],
-        message: [
-            'PruebaQWEQWEQWEQWEQWEQWEQWEQWEQWEQWE',
-            [Validators.required, Validators.minLength(15)],
-        ],
+        name: ['', [Validators.required, Validators.minLength(5)]],
+        email: ['', [Validators.required, Validators.email]],
+        message: ['', [Validators.required, Validators.minLength(15)]],
     })
 
     formUtils: typeof FormUtils = FormUtils

@@ -1,4 +1,4 @@
-<div class="bg-background max-w-[700px] px-6 py-20">
+<div class="bg-background mt-20 max-w-[700px] px-6">
     <!-- DIVIDER -->
     <div class="flex w-fit flex-col">
         <div class="bg-primary h-px"></div>
@@ -26,7 +26,7 @@
                     inputmode="text"
                     type="text"
                     placeholder="Enter your name"
-                    class="border-border placeholder:text-secondary focus:outline-border text-primary font-roboto mt-0.5 rounded-md border px-2 py-1 text-base placeholder:text-xs focus:outline-2"
+                    class="border-border placeholder:text-secondary focus:outline-border text-primary font-roboto mt-0.5 rounded-md border px-2 py-1 text-xs placeholder:text-xs focus:outline-2"
                 />
                 <div class="flex h-[15px] items-center">
                     @if (formUtils.isValidField(contactForm, 'name')) {
@@ -44,12 +44,12 @@
                     inputmode="email"
                     type="text"
                     placeholder="Enter your email address"
-                    class="border-border placeholder:text-secondary focus:outline-border text-primary font-roboto mt-0.5 rounded-md border px-2 py-1 text-base placeholder:text-xs focus:outline-2"
+                    class="border-border placeholder:text-secondary focus:outline-border text-primary font-roboto mt-0.5 rounded-md border px-2 py-1 text-xs placeholder:text-xs focus:outline-2"
                 />
                 <div class="flex h-[15px] items-center">
                     @if (formUtils.isValidField(contactForm, 'email')) {
                         <span class="text-error pl-2 text-[8px]">
-                            {{ formUtils.getFieldError(contactForm, 'name') }}
+                            {{ formUtils.getFieldError(contactForm, 'email') }}
                         </span>
                     }
                 </div>
@@ -62,7 +62,7 @@
                     inputmode="text"
                     type="text"
                     placeholder="Enter your message"
-                    class="border-border placeholder:text-secondary focus:outline-border text-primary font-roboto mt-0.5 resize-none rounded-md border px-2 py-1 text-base placeholder:text-xs focus:outline-2"
+                    class="border-border placeholder:text-secondary focus:outline-border text-primary font-roboto mt-0.5 resize-none rounded-md border px-2 py-1 text-xs placeholder:text-xs focus:outline-2"
                 ></textarea>
                 <div class="flex h-[15px] items-center">
                     @if (formUtils.isValidField(contactForm, 'message')) {
@@ -95,14 +95,16 @@
     </form>
 
     <!-- CV BUTTON -->
-    <button
+    <a
+        href="https://drive.google.com/file/d/11chTFyjiFPGTqJSPvjPOPDoT8c64cYgh/view"
+        target="_blank"
         class="border-border mt-6 flex w-full items-center justify-center gap-3 rounded-md border py-2"
     >
         <i class="fa-solid fa-download text-primary text-sm font-medium"></i>
         <span class="text-primary text-sm font-medium">Download CV</span>
-    </button>
+    </a>
     <!-- SOCIALS -->
-    <div class="mt-6 flex items-baseline justify-center gap-3">
+    <div class="my-6 flex items-baseline justify-center gap-3">
         <a
             href="https://github.com/ismaelplg"
             target="_blank"

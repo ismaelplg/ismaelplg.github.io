@@ -38,19 +38,16 @@
                         }
                     </div>
                     <div class="mt-2 ml-1 flex items-center justify-between">
-                        <a
-                            [href]="project.link"
-                            target="_blank"
-                            [class.status]="
-                                project.status === 'in-progress'
-                                    ? 'cursor-not-allowed disabled'
-                                    : ''
-                            "
-                        >
-                            <i
-                                class="fa-solid fa-arrow-up-right-from-square text-primary text-xs"
-                            ></i>
-                        </a>
+                        <div>
+                            @if (project.status === 'completed') {
+                                <a [href]="project.link" target="_blank">
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square text-primary text-xs"
+                                    ></i>
+                                </a>
+                            }
+                        </div>
+
                         <h1
                             [ngClass]="projectStatus(project.status)"
                             class="rounded-2xl px-2 text-[8px] font-medium"

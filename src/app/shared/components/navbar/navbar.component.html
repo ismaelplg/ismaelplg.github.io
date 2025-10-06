@@ -1,7 +1,15 @@
 <nav class="bg-background border-border border px-4 py-2">
     <div class="flex items-center justify-between xl:mx-auto xl:w-[900px]">
         <!-- Logo -->
-        <shared-logotype />
+        <div
+            (click)="
+                sidepanelService.isToggled()
+                    ? sidepanelService.toggleSidepanel()
+                    : null
+            "
+        >
+            <shared-logotype />
+        </div>
 
         <!-- TABLET/DESKTOP LINKS -->
         <div class="hidden lg:flex lg:gap-10">

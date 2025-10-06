@@ -8,12 +8,7 @@ import { ContainerComponent } from '../container/container.component'
 
 @Component({
     selector: 'shared-navbar',
-    imports: [
-        LogotypeComponent,
-        SidepanelComponent,
-        CommonModule,
-        ContainerComponent,
-    ],
+    imports: [LogotypeComponent, SidepanelComponent, CommonModule],
     templateUrl: './navbar.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
