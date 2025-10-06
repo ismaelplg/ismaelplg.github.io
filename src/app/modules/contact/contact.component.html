@@ -16,30 +16,84 @@
         </h2>
     </div>
     <!-- CONTACT FORM -->
-    <div class="border-border mt-8 rounded-xl border p-4">
-        <!-- NAME -->
-        <div class="flex flex-col">
-            <label class="text-primary text-sm font-bold">Name</label>
-            <input
-                inputmode="text"
-                type="text"
-                placeholder="Your name"
-                class="border-border placeholder:text-secondary focus:outline-border text-primary font-roboto mt-0.5 rounded-md border px-2 py-1 text-base focus:outline-2"
-            />
-            <span class="text-error mt-0.5 h-[15px] pl-2 text-[10px]"
-                >Name required</span
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="border-border mt-8 rounded-xl border p-4">
+            <!-- NAME -->
+            <div class="flex flex-col">
+                <label class="text-primary text-sm font-bold">Name</label>
+                <input
+                    formControlName="name"
+                    inputmode="text"
+                    type="text"
+                    placeholder="Enter your name"
+                    class="border-border placeholder:text-secondary focus:outline-border text-primary font-roboto mt-0.5 rounded-md border px-2 py-1 text-base placeholder:text-xs focus:outline-2"
+                />
+                <div class="flex h-[15px] items-center">
+                    @if (formUtils.isValidField(contactForm, 'name')) {
+                        <span class="text-error pl-2 text-[8px] italic">
+                            {{ formUtils.getFieldError(contactForm, 'name') }}
+                        </span>
+                    }
+                </div>
+            </div>
+            <!-- EMAIL -->
+            <div class="flex flex-col">
+                <label class="text-primary text-sm font-bold">Email</label>
+                <input
+                    formControlName="email"
+                    inputmode="email"
+                    type="text"
+                    placeholder="Enter your email address"
+                    class="border-border placeholder:text-secondary focus:outline-border text-primary font-roboto mt-0.5 rounded-md border px-2 py-1 text-base placeholder:text-xs focus:outline-2"
+                />
+                <div class="flex h-[15px] items-center">
+                    @if (formUtils.isValidField(contactForm, 'email')) {
+                        <span class="text-error pl-2 text-[8px]">
+                            {{ formUtils.getFieldError(contactForm, 'name') }}
+                        </span>
+                    }
+                </div>
+            </div>
+            <!-- MESSAGE -->
+            <div class="flex flex-col">
+                <label class="text-primary text-sm font-bold">Message</label>
+                <textarea
+                    formControlName="message"
+                    inputmode="text"
+                    type="text"
+                    placeholder="Enter your message"
+                    class="border-border placeholder:text-secondary focus:outline-border text-primary font-roboto mt-0.5 resize-none rounded-md border px-2 py-1 text-base placeholder:text-xs focus:outline-2"
+                ></textarea>
+                <div class="flex h-[15px] items-center">
+                    @if (formUtils.isValidField(contactForm, 'message')) {
+                        <span class="text-error pl-2 text-[8px]">
+                            {{
+                                formUtils.getFieldError(contactForm, 'message')
+                            }}
+                        </span>
+                    }
+                </div>
+            </div>
+
+            <!-- SEND BUTTON -->
+
+            <button
+                type="submit"
+                class="mt-6 flex w-full items-baseline justify-center gap-3 rounded-md py-2 text-sm font-medium"
+                [ngClass]="{
+                    'bg-primary': status() === 'idle' || status() === 'loading',
+                    'bg-green-500': status() === 'success',
+                    'bg-red-500': status() === 'error',
+                }"
             >
+                <i [class]="getIconClass()"></i>
+                <span class="text-background text-sm font-medium">
+                    {{ getButtonText() }}
+                </span>
+            </button>
         </div>
-        <!-- SEND BUTTON -->
-        <button
-            class="bg-primary mt-6 flex w-full items-center justify-center gap-3 rounded-md py-2"
-        >
-            <i class="fa-regular fa-envelope text-background"></i>
-            <span class="text-background text-sm font-medium"
-                >Send message</span
-            >
-        </button>
-    </div>
+    </form>
+
     <!-- CV BUTTON -->
     <button
         class="border-border mt-6 flex w-full items-center justify-center gap-3 rounded-md border py-2"
