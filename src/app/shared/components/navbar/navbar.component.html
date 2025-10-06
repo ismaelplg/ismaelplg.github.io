@@ -1,60 +1,82 @@
-<nav
-  class="bg-background border-border z-50 flex items-center justify-between border-b px-5 py-2 lg:flex xl:px-[550px]"
->
-  <div class="flex items-center justify-between">
-    <shared-logotype />
-  </div>
-  <!-- TABLET LINKS -->
-  <div class="hidden lg:block">
-    <div class="flex gap-10 px-6" (click)="sidepanelService.toggleSidepanel()">
-      <a href="#home">
-        <span class="text-secondary text-sm">Home</span>
-      </a>
+<nav class="bg-background border-border border px-4 py-2">
+    <div class="flex items-center justify-between xl:mx-auto xl:w-[900px]">
+        <!-- Logo -->
+        <shared-logotype />
 
-      <a href="#about">
-        <span class="text-secondary text-sm">About Me</span>
-      </a>
+        <!-- TABLET/DESKTOP LINKS -->
+        <div class="hidden lg:flex lg:gap-10">
+            <a
+                href="#home"
+                class="text-secondary text-sm transition-opacity hover:opacity-80"
+                >Home</a
+            >
+            <a
+                href="#about"
+                class="text-secondary text-sm transition-opacity hover:opacity-80"
+                >About Me</a
+            >
+            <a
+                href="#projects"
+                class="text-secondary text-sm transition-opacity hover:opacity-80"
+                >Projects</a
+            >
+            <a
+                href="#experience"
+                class="text-secondary text-sm transition-opacity hover:opacity-80"
+                >Experience</a
+            >
 
-      <a href="#projects">
-        <span class="text-secondary text-sm">Projects</span>
-      </a>
+            <a
+                href="#contact"
+                class="text-secondary text-sm transition-opacity hover:opacity-80"
+                >Contact</a
+            >
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="flex items-center gap-4">
+            <!-- THEME TOGGLE -->
+            <button
+                class="flex cursor-pointer items-center justify-center p-2 transition-opacity hover:opacity-80"
+                (click)="themeService.toggleTheme()"
+                aria-label="Toggle theme"
+            >
+                <i
+                    [class]="
+                        themeService.isDark()
+                            ? 'fa-solid fa-sun text-secondary text-lg'
+                            : 'fa-solid fa-moon text-secondary text-lg'
+                    "
+                    class="transition-all duration-300 ease-in-out"
+                    [style.transform]="
+                        themeService.isDark() ? 'rotate(90deg)' : 'rotate(0deg)'
+                    "
+                ></i>
+            </button>
+
+            <!-- MENU TOGGLE -->
+            <button
+                class="flex w-[25px] cursor-pointer items-center justify-center gap-2 transition-opacity hover:opacity-80 lg:hidden"
+                (click)="sidepanelService.toggleSidepanel()"
+                aria-label="Toggle menu"
+            >
+                <i
+                    [class]="
+                        sidepanelService.isToggled()
+                            ? 'fa-solid fa-xmark text-secondary text-xl'
+                            : 'fa-solid fa-bars text-secondary text-xl'
+                    "
+                    class="transition-all duration-300 ease-in-out"
+                    [style.transform]="
+                        sidepanelService.isToggled()
+                            ? 'rotate(90deg)'
+                            : 'rotate(0deg)'
+                    "
+                ></i>
+            </button>
+        </div>
     </div>
-  </div>
-  <!-- HAMBURGER/CLOSE TOGGLE - CHANGE THEME -->
-  <div class="flex cursor-pointer items-center gap-4">
-    <div
-      class="flex items-center justify-center p-2"
-      (click)="themeService.toggleTheme()"
-    >
-      <i
-        [class]="
-          themeService.isDark()
-            ? 'text-secondary fa-solid fa-sun text-lg'
-            : 'text-secondary fa-solid fa-moon text-lg'
-        "
-        class="text-secondary transition-all duration-300 ease-in-out"
-        [style.transform]="
-          themeService.isDark() ? 'rotate(90deg)' : 'rotate(0deg)'
-        "
-      ></i>
-    </div>
-    <div
-      class="flex w-[25px] cursor-pointer items-center justify-center gap-2 md:hidden"
-      (click)="sidepanelService.toggleSidepanel()"
-    >
-      <i
-        [class]="
-          sidepanelService.isToggled()
-            ? 'text-secondary fa-solid fa-xmark text-xl'
-            : 'text-secondary fa-solid fa-bars text-xl'
-        "
-        class="transition-all duration-300 ease-in-out"
-        [style.transform]="
-          sidepanelService.isToggled() ? 'rotate(90deg)' : 'rotate(0deg)'
-        "
-      ></i>
-    </div>
-  </div>
 </nav>
 
+<!-- SIDEPANEL -->
 <shared-sidepanel class="fixed -z-10 w-full" />

@@ -1,26 +1,46 @@
-<div class="bg-background h-screen">
+<div class="bg-background">
     <div class="fixed top-0 w-full">
         <shared-navbar />
     </div>
 
-    <div class="h-screen pt-[64px]">
-        <section id="home">
+    <shared-container>
+        <section id="home" class="">
             <app-home />
         </section>
-        <div class="bg-background scroll-py-20 pt-20">
-            <section id="about">
-                <app-about />
-            </section>
+
+        <section id="about" class="scroll-py-20">
+            <app-about />
+        </section>
+
+        <section id="projects" class="scroll-py-20">
+            <app-projects />
+        </section>
+
+        <section id="experience" class="scroll-py-20">
+            <app-experience />
+        </section>
+
+        <section id="contact" class="">
+            <app-contact />
+        </section>
+    </shared-container>
+    <!-- NAME -->
+    <div
+        class="border-border flex flex-col items-center justify-center gap-1 border pt-6 pb-16"
+    >
+        <div class="text-secondary flex items-center text-xs">
+            <h1>© 2025 Ismael López. Build with</h1>
+            <img src="icons/angular.svg" alt="angular" class="mx-1.5 w-4" />
+            <span> and </span>
+            <img
+                src="icons/tailwindcss.svg"
+                alt="tailwindcss"
+                class="mx-1.5 w-4"
+            />
         </div>
-        <div class="bg-background scroll-py-20 pt-20">
-            <section id="projects">
-                <app-projects />
-            </section>
-        </div>
-        <div class="bg-background scroll-py-20 py-20">
-            <section id="experience">
-                <app-experience />
-            </section>
+        <div class="flex items-center gap-2">
+            <h1 class="text-secondary text-xs">Hosted by</h1>
+            <i class="fa-brands fa-github text-primary"></i>
         </div>
     </div>
 </div>
