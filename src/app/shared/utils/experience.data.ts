@@ -31,7 +31,7 @@ export const experience: Work[] = [
                 task: 'Co-founding a business venture that develops digital platforms for corporate clients, managing complete projects from website redesign to custom application development.',
             },
         ],
-        technologies: ['Angular', 'React Native'],
+        technologies: ['Angular'],
     },
     {
         company: 'HMS, Sistemas de Informacion',
