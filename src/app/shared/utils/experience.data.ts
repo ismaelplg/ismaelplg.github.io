@@ -24,9 +24,9 @@ export const experience: Work[] = [
         position: 'Software Developer',
         startDate: { month: 'september', year: '2025' },
         description: [
-            {
-                task: 'Currently part of an international team in London building a dating app, responsible for frontend development and AI implementation for enhanced user experience.',
-            },
+            // {
+            //     task: 'Currently part of an international team in London building a dating app, responsible for frontend development and AI implementation for enhanced user experience.',
+            // },
             {
                 task: 'Co-founding a business venture that develops digital platforms for corporate clients, managing complete projects from website redesign to custom application development.',
             },
