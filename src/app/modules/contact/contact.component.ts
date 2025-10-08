@@ -17,7 +17,7 @@ import { CommonModule, JsonPipe } from '@angular/common'
 
 @Component({
     selector: 'app-contact',
-    imports: [ReactiveFormsModule, JsonPipe, CommonModule],
+    imports: [ReactiveFormsModule, CommonModule],
     templateUrl: './contact.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
