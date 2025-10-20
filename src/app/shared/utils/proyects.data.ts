@@ -34,6 +34,17 @@ export const projects: Proyects[] = [
         link: 'https:/naturaeat.com',
         technologies: ['Angular', 'Shopify'],
     },
+    {
+        id: 'Industrial Services Company Web',
+        type: 'Static web page',
+        image: '',
+        imageAlt: '',
+        description:
+            'Static web page about an emerging company dedicated to providing services to the industry.',
+        status: 'in-progress',
+        link: '',
+        technologies: ['Angular'],
+    },
 ]
 
 // Función para asignar color según el status
