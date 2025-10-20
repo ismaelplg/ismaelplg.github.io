@@ -9,16 +9,16 @@ export class FormUtils {
         for (const key of Object.keys(errors)) {
             switch (key) {
                 case 'required':
-                    return 'Este campo es requerido'
+                    return 'This field is required'
 
                 case 'minlength':
-                    return `Mínimo de ${errors['minlength'].requiredLength} carácteres.`
+                    return `Must be at least ${errors['minlength'].requiredLength} characters long.`
 
                 case 'email':
-                    return 'Ingresa un correo válido'
+                    return 'Enter a valid email address.'
 
                 default:
-                    return `Error de validación no controlado ${key}`
+                    return `Unhandled validation error: ${key} `
             }
         }
 
