@@ -68,7 +68,6 @@ export class ContactComponent {
     }
 
     onSubmit() {
-        console.log(this.contactForm.value)
         if (this.contactForm.invalid) {
             this.contactForm.markAllAsTouched()
 
@@ -76,33 +75,32 @@ export class ContactComponent {
         }
 
         const payload = { ...this.contactForm.value }
-        console.log(payload)
 
         this.status.set('loading')
 
         this.emailService.sendContactForm(payload).subscribe({
             next: (resp) => {
-                if (!resp.status) {
+                if (resp.success) {
+                    this.status.set('success')
+                    this.errorMessage.set('')
+                    this.contactForm.reset()
+
+                    setTimeout(() => {
+                        this.status.set('idle')
+                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                    }, 1500)
+                } else {
                     this.status.set('error')
                     this.errorMessage.set('Hubo un error al enviar')
-                    return
                 }
-                this.status.set('success')
-                console.log(this.status())
             },
-            error: (err) => {
+            error: () => {
                 this.status.set('error')
                 this.errorMessage.set(
-                    `Hubo un error al enviar, intente de nuevo`
+                    'Hubo un error al enviar, intente de nuevo'
                 )
+
                 setTimeout(() => this.status.set('idle'), 2500)
-            },
-            complete: () => {
-                this.contactForm.reset()
-                setTimeout(() => {
-                    this.status.set('idle')
-                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-                }, 1500)
             },
         })
     }
