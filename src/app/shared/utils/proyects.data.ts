@@ -24,6 +24,17 @@ export const projects: Proyects[] = [
         technologies: ['Angular'],
     },
     {
+        id: 'Industrial Services Company Web',
+        type: 'Static web page',
+        image: 'images/kavex/Kavex.png',
+        imageAlt: 'images/kavex/Kavex.png',
+        description:
+            'Static web page about an emerging company dedicated to providing services to the industry.',
+        status: 'in-progress',
+        link: 'https://industrial-nine.vercel.app/',
+        technologies: ['Angular'],
+    },
+    {
         id: 'Naturaeat',
         type: 'E-commerce web-app',
         image: 'images/naturaeat/naturaeat.png',
@@ -31,19 +42,8 @@ export const projects: Proyects[] = [
         description:
             'E-commerce about a natural products store, committed to offering and creating a healthy and happy community',
         status: 'in-progress',
-        link: 'https:/naturaeat.com',
-        technologies: ['Angular', 'Shopify'],
-    },
-    {
-        id: 'Industrial Services Company Web',
-        type: 'Static web page',
-        image: '',
-        imageAlt: '',
-        description:
-            'Static web page about an emerging company dedicated to providing services to the industry.',
-        status: 'in-progress',
         link: '',
-        technologies: ['Angular'],
+        technologies: ['Angular', 'Shopify'],
     },
 ]
 

@@ -39,7 +39,7 @@
                     </div>
                     <div class="mt-2 ml-1 flex items-center justify-between">
                         <div>
-                            @if (project.status === 'completed') {
+                            @if (project.link != '') {
                                 <a [href]="project.link" target="_blank">
                                     <i
                                         class="fa-solid fa-arrow-up-right-from-square text-primary text-xs"
