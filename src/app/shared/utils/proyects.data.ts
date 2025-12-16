@@ -41,7 +41,7 @@ export const projects: Proyects[] = [
         imageAlt: 'images/naturaeat/naturaeat.png',
         description:
             'E-commerce about a natural products store, committed to offering and creating a healthy and happy community',
-        status: 'in-progress',
+        status: 'paused',
         link: '',
         technologies: ['Angular', 'Shopify'],
     },
