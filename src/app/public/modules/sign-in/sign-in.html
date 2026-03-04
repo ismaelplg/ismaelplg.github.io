@@ -1,5 +1,17 @@
-<div class="bg-background">
-    <div class="flex items-center justify-center">
+<div class="bg-background flex h-screen flex-col border border-amber-200">
+    <!-- BACK TO HOME -->
+    <div
+        class="text-secondary flex items-center gap-2 border border-rose-500 p-2 text-[8px] uppercase"
+        [routerLink]="'/'"
+    >
+        <i class="fa-solid fa-arrow-left"></i>
+        <h1>back to portfolio</h1>
+    </div>
+
+    <!-- SIGN IN FORMS -->
+    <div
+        class="flex flex-1 items-center justify-center border border-green-400"
+    >
         <shared-logotype />
     </div>
 </div>
