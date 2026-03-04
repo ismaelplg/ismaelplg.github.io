@@ -39,20 +39,30 @@
     </div>
 
     <!-- FOOTER -->
-    <div class="flex flex-col items-center justify-center py-10">
-        <div class="text-secondary flex items-center text-xs">
-            <h1>© {{ date.getFullYear() }} Ismael López. Build with</h1>
+    <div
+        class="text-secondary flex flex-col items-center justify-center gap-1 py-10 text-xs"
+    >
+        <div class="flex items-center">
+            <h1>© {{ date.getFullYear() }} Ismael López.</h1>
+        </div>
+        <div class="flex items-center">
             <img src="icons/angular.svg" alt="angular" class="mx-1.5 w-4" />
-            <span> and </span>
             <img
                 src="icons/tailwindcss.svg"
                 alt="tailwindcss"
                 class="mx-1.5 w-4"
             />
+            <img src="icons/nodejs.svg" alt="tailwindcss" class="mx-1.5 w-4" />
+            <img
+                src="icons/postgresql.svg"
+                alt="tailwindcss"
+                class="mx-1.5 w-4"
+            />
         </div>
-        <div class="flex items-center gap-2">
-            <h1 class="text-secondary text-xs">Hosted by</h1>
+        <div class="flex items-center gap-1">
+            <h1>Hosted by</h1>
             <i class="fa-brands fa-github text-primary"></i>
+            <img src="icons/supabase.svg" alt="tailwindcss" class="w-3" />
         </div>
     </div>
 
