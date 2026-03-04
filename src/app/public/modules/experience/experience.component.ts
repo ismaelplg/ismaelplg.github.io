@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core'
 
 import { CommonModule } from '@angular/common'
-import { experience, Work } from '../../shared/utils/experience.data'
+import { Work, experience } from '../../../shared/utils/experience.data'
 
 @Component({
     selector: 'app-experience',

@@ -11,9 +11,10 @@ import {
     ReactiveFormsModule,
 } from '@angular/forms'
 import { Router } from '@angular/router'
-import { FormUtils } from '../../shared/utils/form.utils'
-import { EmailService } from '../../shared/services/email.service'
-import { CommonModule, JsonPipe } from '@angular/common'
+
+import { CommonModule } from '@angular/common'
+import { EmailService } from '../../../shared/services/email.service'
+import { FormUtils } from '../../../shared/utils/form.utils'
 
 @Component({
     selector: 'app-contact',

@@ -4,13 +4,14 @@ import {
     inject,
     signal,
 } from '@angular/core'
-import {
-    getStatusColor,
-    projects,
-    Proyects,
-} from '../../shared/utils/proyects.data'
-import { ThemeService } from '../../shared/services/theme.service'
+
 import { CommonModule, UpperCasePipe } from '@angular/common'
+import { ThemeService } from '../../../shared/services/theme.service'
+import {
+    Proyects,
+    projects,
+    getStatusColor,
+} from '../../../shared/utils/proyects.data'
 
 @Component({
     selector: 'app-projects',

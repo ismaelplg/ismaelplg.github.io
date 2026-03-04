@@ -25,12 +25,23 @@
             <app-contact />
         </section>
     </shared-container>
-    <!-- NAME -->
-    <div
-        class="border-border flex flex-col items-center justify-center gap-1 border pt-6 pb-16"
-    >
+    <!-- DIVIDER -->
+    <div class="flex items-center text-xs">
+        <div class="bg-border h-px flex-1"></div>
+
+        <div
+            class="text-secondary flex flex-none items-baseline gap-1 px-2 whitespace-nowrap"
+            (click)="backToTop()"
+        >
+            <i class="fa-solid fa-arrow-up"></i>
+            <h1 class="text-[8px] uppercase">back to top</h1>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="flex flex-col items-center justify-center py-10">
         <div class="text-secondary flex items-center text-xs">
-            <h1>© 2025 Ismael López. Build with</h1>
+            <h1>© {{ date.getFullYear() }} Ismael López. Build with</h1>
             <img src="icons/angular.svg" alt="angular" class="mx-1.5 w-4" />
             <span> and </span>
             <img
@@ -44,4 +55,13 @@
             <i class="fa-brands fa-github text-primary"></i>
         </div>
     </div>
+
+    <a [routerLink]="'/sign-in'">
+        <div
+            class="text-background hover:text-secondary flex items-center justify-center gap-1 text-[8px] uppercase"
+        >
+            <h1>Sign in</h1>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </a>
 </div>

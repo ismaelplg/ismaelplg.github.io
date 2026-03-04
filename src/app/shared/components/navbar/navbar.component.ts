@@ -4,12 +4,10 @@ import { SidepanelComponent } from '../sidepanel/sidepanel.component'
 import { SidepanelService } from '../../services/sidepanel.service'
 import { CommonModule } from '@angular/common'
 import { ThemeService } from '../../services/theme.service'
-import { ContainerComponent } from '../container/container.component'
-import { RouterLink } from '@angular/router'
 
 @Component({
     selector: 'shared-navbar',
-    imports: [LogotypeComponent, SidepanelComponent, CommonModule, RouterLink],
+    imports: [LogotypeComponent, SidepanelComponent, CommonModule],
     templateUrl: './navbar.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
